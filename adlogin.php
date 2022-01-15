@@ -3,7 +3,7 @@ session_start();
 
     include("connection.php");
     include("adfunction.php");
-    
+
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         //something was posted
@@ -23,7 +23,7 @@ session_start();
                 {
 
                     $user_data = mysqli_fetch_assoc($result);
-                    
+
                     if($user_data['password'] === $password)
                     {
 
@@ -33,7 +33,7 @@ session_start();
                     }
                 }
             }
-            
+
             echo "wrong admin_id or password!";
         }else
         {
@@ -54,7 +54,7 @@ session_start();
 include "header1.php";
     ?>
     <style type="text/css">
-    
+
     #text{
 
         height: 25px;
@@ -86,15 +86,15 @@ include "header1.php";
 
 
     <div id="box">
-        
+
         <form method="post">
-            <div style="font-size: 20px;margin: 10px;color: white;">Login</div>
+            <div style="font-size: 20px;margin: 10px;color: white;">Admin Login</div>
 
             <p><label for="inp1">Admin ID:</label>
     <input type="number" name="admin_id" id="inp1" value="<?=$oldinp1 ?>"></p>
     <p><label for="inp2">Password:</label>
     <input type="password" name="password" id="inp2"></p>
-    
+
             <input id="button" type="submit" value="Login"><br><br>
 
         </form>
@@ -105,6 +105,6 @@ include "header1.php";
      <?php
 include "footer1.php";
     ?>
-    
+
 </body>
 </html>

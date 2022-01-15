@@ -2,19 +2,19 @@
 session_start();
 
     include("connection.php");
-    include("sfunction.php");
+    include("ifunction.php");
 
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         //something was posted
-        $user_id = $_POST['student_id'];
+        $user_id = $_POST['instructor_id'];
         $password = $_POST['password'];
 
         if(!empty($user_id) && !empty($password))
         {
 
             //read from database
-            $query = "select * from students where student_id = '$user_id' limit 1";
+            $query = "select * from instructors where instructor_id = '$user_id' limit 1";
             $result = mysqli_query($con, $query);
 
             if($result)
@@ -27,17 +27,17 @@ session_start();
                     if($user_data['password'] === $password)
                     {
 
-                        $_SESSION['user_id'] = $user_data['student_id'];
-                        header("Location: studentinfo.php");
+                        $_SESSION['user_id'] = $user_data['instructor_id'];
+                        header("Location: instructorinfo.php");
                         die;
                     }
                 }
             }
 
-            echo "wrong student_id or password!";
+            echo "wrong instructor_id or password!";
         }else
         {
-            echo "wrong student_id or password!";
+            echo "wrong instructor_id or password!";
         }
     }
 
@@ -46,7 +46,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Students Log In</title>
+    <title>Instructor Log In</title>
     <meta charset="utf-8">
 </head>
 <body>
@@ -88,10 +88,10 @@ include "header1.php";
     <div id="box">
 
         <form method="post">
-            <div style="font-size: 20px;margin: 10px;color: white;">Student Login</div>
+            <div style="font-size: 20px;margin: 10px;color: white;">Instructor Login</div>
 
-            <p><label for="inp1">Roll</label>
-    <input type="number" name="student_id" id="inp1" value="<?=$oldinp1 ?>"></p>
+            <p><label for="inp1">Instructor Id:</label>
+    <input type="number" name="instructor_id" id="inp1" value="<?=$oldinp1 ?>"></p>
     <p><label for="inp2">Password</label>
     <input type="password" name="password" id="inp2"></p>
 
