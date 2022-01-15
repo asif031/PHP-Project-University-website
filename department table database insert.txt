@@ -3,3 +3,17 @@ insert into departments(dept_id,dept_name, capacity) values (1,"CE",10);
 insert into departments(dept_id,dept_name, capacity) values (3,"EEE",10);
 insert into departments(dept_id,dept_name, capacity) values (5,"ME",10);
 insert into departments(dept_id,dept_name, capacity) values (10,"Sorcerer",10);
+
+
+insert into hall(hall_name, capacity) values ("Carne Village",20);
+
+insert into hall(hall_name, capacity) values ("Baharuth Empire",20);
+
+
+UPDATE students SET hall_id= 3 WHERE student_id=1707031;
+UPDATE students SET hall_id= 4 WHERE student_id=1707041;
+
+
+UPDATE hall SET capacity=25 WHERE hall_id=3;
+
+UPDATE hall SET capacity=25 WHERE hall_id=4;
