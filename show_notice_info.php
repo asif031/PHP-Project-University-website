@@ -1,7 +1,6 @@
   <?php
 
     include("connection.php");
-    include("sfunction.php");
 
 
 ?>
@@ -15,6 +14,7 @@
 <div>
     <table border="1">
   <tr>
+    <th>id</th>
     <th>date</th>
     <th>notice</th>
   </tr>
@@ -32,25 +32,26 @@
                         ?>
 
                         <tr>
+                          <td><?php echo $data['id']."&emsp;"; ?></td>
                             <td><?php echo $data['date']."&emsp;"; ?></td>
                             <td><?php echo $data['notice']."&emsp;"; ?></td>
-                            
+
                         </tr>
                         <?php
                     }
-                    
+
                 }
 
 
     ?>
-  
 
-</table> 
+
+</table>
 
 
 </div>
 
-         
-    
+
+
     </body>
     </html>

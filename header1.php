@@ -9,7 +9,7 @@
     <table>
         <tr>
             <td align="right">
-                <img src="image/unicon.png" alt="university icon" width="10%" style="margin: 1em;">
+                <img src="image/unicon.png" alt="university icon" width="20%" style="margin: 1em;">
             </td>
             <td>
                 <h1>
@@ -22,11 +22,11 @@
             </td>
         </tr>
     </table>
-    
-    
+
+
 </div>
-    
-   
+
+
     <nav>
     <ul>
   <a href="home.php">Home</a>
@@ -35,7 +35,7 @@
   <a href="department.php">department</a>
   <a href="hall.php">Hall</a>
   <a href="admin.php">admin</a>
-  
+
 </nav>
     <hr>
 

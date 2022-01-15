@@ -28,8 +28,7 @@ include "header1.php";
 
 
     <h4>NoticeBoard::::</h4>
-    <iframe src="show_notice_info.php" width="700px" height="500px%"></iframe>
-    <p class="upper">Noticeboard</p>
+    <iframe src="noticeboard.php" width="700px" height="500px%"></iframe>
 </div
 
 

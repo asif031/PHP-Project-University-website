@@ -1,5 +1,8 @@
 <?php
-include("connection.php");
+session_start();
+
+    include("connection.php");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,8 +21,8 @@ include "header1.php";
   </h2>
     <table align="center">
   <tr>
-    <th>Instructor Name</th>
-    <th>Department</th>
+    <th>Instructor Name &emsp;</th>
+    <th>Department &emsp;</th>
   </tr>
   <?php
 

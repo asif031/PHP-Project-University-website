@@ -18,12 +18,14 @@ include "header1.php";
   </h2>
     <table align="center">
   <tr>
-    <th>Student Name</th>
-    <th>Department</th>
+    <th>Student Name &emsp;</th>
+    <th>Department &emsp;</th>
+    <th>Hall</th>
   </tr>
   <?php
 
-        $query = "select * from students s INNER JOIN departments d on s.dept_id=d.dept_id";
+        $query = "select * from students s INNER JOIN departments d on s.dept_id=d.dept_id
+         INNER JOIN hall h on s.hall_id=h.hall_id";
 
         $result =mysqli_query($con, $query);
          if($result && mysqli_num_rows($result) > 0)
@@ -35,6 +37,7 @@ include "header1.php";
                         <tr>
                           <td><?php echo $data['student_name']."&emsp;"; ?></td>
                           <td><?php echo $data['dept_name']."&emsp;"; ?></td>
+                          <td><?php echo $data['hall_name']."&emsp;"; ?></td>
 
                         </tr>
 

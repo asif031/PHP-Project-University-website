@@ -12,13 +12,13 @@
 This is official website of Ainz Ooal Gown University developed and maintained by<br>
 Md.Asif Ud Daula<br>
 asifuddaulaasif@gmail.com<br>
-Copyright(c) AOGUN 2020-21<br><br>
+Copyright &copy; AOGUN 2020-21&reg;<br><br>
 
 <mark>For any comment about this site send email to asifuddaulaasif@gmail.com</mark>
 ";
     echo $footer;
     ?>
-    
+
 
 </body>
 </html>

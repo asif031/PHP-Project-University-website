@@ -1,21 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-</head>
-<body bgcolor="#96e28e">
-    <div>
-        
-        <table border="0" bgcolor="#96e28e">
-    <caption>Notice</caption>
-    <tr><th>Date</th><th>Notice</th></tr>
-        
-    <tr><td>Sif</td><td>setto</td></tr>
-    <tr><td>fid</td><td>025</td></tr>
+<?php
+
+  include("connection.php");
+
+
+?>
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <title></title>
+  </head>
+  <body>
+<div>
+
+<?php
+
+      $query = "select * from noticeboard ORDER BY date DESC";
+
+      $result =mysqli_query($con, $query);
+       if($result && mysqli_num_rows($result) > 0)
+              {
+                  while ($data = mysqli_fetch_array($result)) {
+                      ?>
+                          <?php echo $data['date']."//&emsp;"; ?>
+                          <hr>
+                          <?php echo $data['notice']."&emsp;"; ?>
+                          <hr>
+
+                      <?php
+                  }
+
+              }
+
+
+  ?>
+
+
 </table>
-    
-    </div>
 
 
-</body>
-</html>
+</div>
+
+
+
+  </body>
+  </html>
