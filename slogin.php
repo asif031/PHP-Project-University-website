@@ -6,7 +6,7 @@ session_start();
 
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        //something was posted
+        
         $user_id = $_POST['student_id'];
         $password = $_POST['password'];
 
@@ -28,16 +28,17 @@ session_start();
                     {
 
                         $_SESSION['user_id'] = $user_data['student_id'];
+                        setcookie("name","students",time()+120);
                         header("Location: studentinfo.php");
                         die;
                     }
                 }
             }
 
-            echo "wrong student_id or password!";
+            include "js/incorrect.js";
         }else
         {
-            echo "wrong student_id or password!";
+            include "js/incorrect.js";
         }
     }
 
@@ -48,6 +49,7 @@ session_start();
 <head>
     <title>Students Log In</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/table.css" />
 </head>
 <body>
     <?php
@@ -64,6 +66,7 @@ include "header1.php";
         width: 100%;
     }
 
+
     #button{
 
         padding: 10px;
@@ -73,13 +76,6 @@ include "header1.php";
         border: none;
     }
 
-    #box{
-
-        background-color:  #f2c4ba ;
-        margin: auto;
-        width: 300px;
-        padding: 20px;
-    }
 
     </style>
 
@@ -87,10 +83,10 @@ include "header1.php";
 
     <div id="box">
 
-        <form method="post">
+        <form method="post" class="login">
             <div style="font-size: 20px;margin: 10px;color: white;">Student Login</div>
 
-            <p><label for="inp1">Roll</label>
+            <p><label for="inp1">Roll &emsp;&emsp;</label>
     <input type="number" name="student_id" id="inp1" value="<?=$oldinp1 ?>"></p>
     <p><label for="inp2">Password</label>
     <input type="password" name="password" id="inp2"></p>

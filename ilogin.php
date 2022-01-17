@@ -6,7 +6,7 @@ session_start();
 
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        //something was posted
+        
         $user_id = $_POST['instructor_id'];
         $password = $_POST['password'];
 
@@ -28,16 +28,18 @@ session_start();
                     {
 
                         $_SESSION['user_id'] = $user_data['instructor_id'];
+                        setcookie("name","teachers",time()+120);
+
                         header("Location: instructorinfo.php");
                         die;
                     }
                 }
             }
 
-            echo "wrong instructor_id or password!";
+            include "js/incorrect.js";
         }else
         {
-            echo "wrong instructor_id or password!";
+            include "js/incorrect.js";
         }
     }
 
@@ -48,6 +50,7 @@ session_start();
 <head>
     <title>Instructor Log In</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/table.css"/>
 </head>
 <body>
     <?php
@@ -73,13 +76,6 @@ include "header1.php";
         border: none;
     }
 
-    #box{
-
-        background-color:  #f2c4ba ;
-        margin: auto;
-        width: 300px;
-        padding: 20px;
-    }
 
     </style>
 
@@ -87,7 +83,7 @@ include "header1.php";
 
     <div id="box">
 
-        <form method="post">
+        <form method="post" class="login">
             <div style="font-size: 20px;margin: 10px;color: white;">Instructor Login</div>
 
             <p><label for="inp1">Instructor Id:</label>

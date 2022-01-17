@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 	include("connection.php");
@@ -28,7 +28,8 @@ session_start();
 			die;
 		}else
 		{
-			echo "empty field!";
+			include "js/emptyfield.js";
+
 		}
 	}
 ?>
@@ -42,7 +43,7 @@ session_start();
 <body>
 
 	<style type="text/css">
-	
+
 	#text{
 
 		height: 25px;
@@ -72,12 +73,12 @@ session_start();
 	</style>
 
 	<div id="box">
-		
+
 		<form method="post">
 			<div style="font-size: 20px;margin: 10px;color: white;">Instructor Info Update</div>
 			<p><label for="inp1">instructor_id:</label>
 			<input id="text" type="number" name="instructor_id"><br><br>
-			
+
 			<p><label for="inp3">dept_id:</label>
 			<input id="text" type="number" name="dept_id"><br><br>
 			<p><label for="inp4">instructor_name:</label>

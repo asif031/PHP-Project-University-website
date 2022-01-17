@@ -11,37 +11,64 @@ session_start();
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/table.css" />
 </head>
 <body>
     <?php
 include "header1.php";
     ?>
 
-    <div>
+
+    <div class="logout">
         <a href="adlogout.php" align=right>LOG-OUT</a>
 
-
-    <?php
-    include "show_student_info.php";
-    ?>
-    <a href="update_student_info.php">Add new Student</a> &emsp;
-    <a href="change_student_password.php">Change password</a> &emsp;
-    <a href="change_student_result.php">Change result</a> &emsp;
-    <a href="delete_student.php">Delete Student</a>
-    <?php
-    include "show_instructor_info.php";
-    ?>
-    <a href="update_instructor_info.php">Add new Instructor</a> &emsp;
-    <a href="change_instructor_password.php">Change password</a> &emsp;
-    <a href="change_instructor_Salary.php">Change Salary</a> &emsp;
-    <a href="delete_instructor.php">Delete Instructor</a>
-    <?php
-    include "show_notice_info.php";
-    ?>
-    <a href="update_notice_board.php">Update Notice Board</a> &emsp;
-    <a href="delete_notice.php">Delete Notice</a>
-
     </div>
+
+<div >
+
+  <label for="page">Upadate:</label>
+  <form method="post">
+    <select name="page" id="page">
+      <option value="student">student</option>
+      <option value="instructor">instructor</option>
+      <option value="notice">notice</option>
+    </select>
+    <input id="button" type="submit" value="submit"><br><br>
+
+  </form>
+
+</div>
+<div id="wrapper">
+
+  <?php
+  if($_SERVER['REQUEST_METHOD'] == "POST")
+  {
+      //something was posted
+      $page = $_POST['page'];
+
+      if(!empty($page))
+      {
+        if($page=="student"){
+          include "show_student_info.php";
+        }
+        else if($page=="instructor"){
+          include "show_instructor_info.php";
+        }
+        else if($page=="notice"){
+          include "show_notice_info.php";
+        }
+
+      }
+
+  }
+
+
+
+  ?>
+
+
+</div>
+
 
 
      <?php

@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 	include("connection.php");
@@ -9,7 +9,7 @@ session_start();
 
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
-		
+
 		$notice = $_POST['notice'];
 
 		if(!empty($notice))
@@ -24,7 +24,7 @@ session_start();
 			die;
 		}else
 		{
-			echo "empty field!";
+			include "js/emptyfield.js";
 		}
 	}
 ?>
@@ -38,7 +38,7 @@ session_start();
 <body>
 
 	<style type="text/css">
-	
+
 	#text{
 
 		height: 25px;
@@ -68,10 +68,10 @@ session_start();
 	</style>
 
 	<div id="box">
-		
+
 		<form method="post">
 			<div style="font-size: 20px;margin: 10px;color: white;">Update Notice</div>
-			
+
 			<p><label for="inp1">Add Notice:</label>
 			<input id="text" type="text" name="notice"><br><br>
 
