@@ -10,18 +10,23 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Students</title>
+    <title>instructorinfo</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/table.css" />
 </head>
 <body>
     <?php
 include "header1.php";
     ?>
-<a href="ilogout.php">LOG-OUT</a><br><br>
+    <div class="logout">
+        <a href="ilogout.php" align=right>LOG-OUT</a>
 
-<div>
-  <h2>Your Personal Information:
-  </h2>
+    </div>
+
+
+<div id="wrapper">
+  <h4>Your Personal Information:
+  </h4>
   <?php
         $user=$_SESSION['user_id'];
 

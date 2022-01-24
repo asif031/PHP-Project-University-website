@@ -5,20 +5,21 @@ include("connection.php");
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/table.css" />
 </head>
 <body>
     <?php
 include "header1.php";
     ?>
-    <div>
-      <h2>Current Departments of the University:
-      </h2>
-        <table align="center">
+    <div id="wrapper">
+      <h4>Current Departments of the University:
+      </h4>
+        <table align="center" id="keywords" cellspacing="0" cellpadding="0" width="100%">
       <tr>
-        <th>Department Code &emsp;</th>
-        <th>Department Name &emsp;</th>
-        <th>Capacity &emsp;</th>
-        <th>Enrolled &emsp;</th>
+        <th class="c1">Department Code &emsp;</th>
+        <th class="c1">Department Name &emsp;</th>
+        <th class="c1">Capacity &emsp;</th>
+        <th class="c1">Enrolled &emsp;</th>
       </tr>
       <?php
 
@@ -32,7 +33,7 @@ include "header1.php";
                             ?>
 
                             <tr>
-                              <td><?php echo $data['dept_id']."&emsp;"; ?></td>
+                              <td class="c2"><?php echo $data['dept_id']."&emsp;"; ?></td>
 
                             <?php
                               $i=intval($data['dept_id']);
@@ -41,9 +42,9 @@ include "header1.php";
                               $result2 =mysqli_query($con, $qury);
                               $count=mysqli_num_rows($result2);
                               ?>
-                              <td><?php echo $data['dept_name']."&emsp;"; ?></td>
-                              <td><?php echo $data['capacity']."&emsp;"; ?></td>
-                              <td><?php echo $count ?></td>
+                              <td class="c2"><?php echo $data['dept_name']."&emsp;"; ?></td>
+                              <td class="c2"><?php echo $data['capacity']."&emsp;"; ?></td>
+                              <td class="c2"><?php echo $count ?></td>
 
                             </tr>
 

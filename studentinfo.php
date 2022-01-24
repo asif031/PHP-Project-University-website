@@ -2,23 +2,29 @@
 session_start();
 
     include("connection.php");
+    include("sfunction.php");
+  $user_data= check_login($con);
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Students</title>
+    <title>StudentInfo</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/table.css" />
 </head>
 <body>
     <?php
 include "header1.php";
     ?>
-<a href="slogout.php">LOG-OUT</a><br><br>
+    <div class="logout">
+        <a href="slogout.php" align=right>LOG-OUT</a>
 
-<div>
-  <h2>Your Personal Information:
-  </h2>
+    </div>
+
+<div id="wrapper">
+  <h4>Your Personal Information:
+  </h4>
   <?php
         $user=$_SESSION['user_id'];
 
@@ -33,7 +39,7 @@ include "header1.php";
                         ?>
 
 
-                        <table>
+                        <table align="center" id="keywords" cellspacing="0" cellpadding="0" width="100%">
                           <tr>
                             <td>Name:&emsp;</td>
                             <td><?php echo $data['student_name']; ?></td>

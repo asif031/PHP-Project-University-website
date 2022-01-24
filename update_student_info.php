@@ -29,7 +29,7 @@ session_start();
 			die;
 		}else
 		{
-			echo "empty field!";
+			include "js/emptyfield.js";
 		}
 	}
 ?>

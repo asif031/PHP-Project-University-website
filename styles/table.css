@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Amarante');
+
+
+html { overflow-y: scroll; }
+body {
+  background: #eee url('https://i.imgur.com/eeQeRmk.png'); /* url('https://i.imgur.com/eeQeRmk.png');*/
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1;
+  padding: 22px 10px;
+  padding-bottom: 55px;
+  margin-top: 10px auto;
+}
+
+
+::selection { background: #5f74a0; color: #fff; }
+::-moz-selection { background: #5f74a0; color: #fff; }
+::-webkit-selection { background: #5f74a0; color: #fff; }
+
+br { display: block; line-height: 1.6em; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+input, textarea {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong, b { font-weight: bold; }
+
+img { border: 0; max-width: 100%; }
+
+h4 {
+  font-family: 'Amarante', Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 3.6em;
+  line-height: 1.7em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.login{
+  text-align: center;
+}
+.logout{
+  display: block;
+  width: 200px;
+  background: #fff;
+  margin: 10px auto;
+  padding: 10px 17px;
+  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+  color: red;
+  text-align: center;
+}
+
+#box{
+
+    background-color:  #f2c4ba ;
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+}
+
+
+/** page structure **/
+#wrapper {
+  display: block;
+  width: 850px;
+  background: #fff;
+  margin: 10px auto;
+  padding: 10px 17px;
+  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+}
+.wrapper{
+  display: block;
+  width: 850px;
+  background: #fff;
+  margin: 10px auto;
+  padding: 10px 17px;
+  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+}
+#keywords{
+
+  margin-top: 5%;
+    width:100%;
+}
+
+tr th{
+	font-weight:bold;
+    }
+.c1{
+	background:  #cceef5  ;
+  padding:5px;
+  border: 1px solid #C1DAD7;
+  text-align: center;
+}
+.c2{
+	background: #e5e6bd ;
+  padding:5px;
+  border: 1px solid #C1DAD7;
+    text-align: center;  text-align: center;
+}
+.c3{
+	background:#a4e56d;
+  padding:5px;
+  border: 5px solid #C1DAD7;
+}
+.c4{
+	background:#cffc83;
+  padding:5px;
+  border: 5px solid #C1DAD7;
+}
