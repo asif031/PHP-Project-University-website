@@ -10,13 +10,13 @@ session_start();
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 
-		$notice = $_POST['notice'];
+		$id = $_POST['id'];
 
-		if(!empty($notice))
+		if(!empty($id))
 		{
 
 			//save to database
-			$query = "insert into noticeboard (notice) values ('$notice')";
+			$query = "DELETE FROM instructors WHERE instructor_id=$id";
 
 			mysqli_query($con, $query);
 
@@ -24,7 +24,7 @@ session_start();
 			die;
 		}else
 		{
-			include "js/emptyfield.js";
+			echo "empty field!";
 		}
 	}
 ?>
@@ -33,7 +33,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Signup</title>
+	<title>deleteNotice</title>
 </head>
 <body>
 
@@ -53,7 +53,7 @@ session_start();
 		padding: 10px;
 		width: 100px;
 		color: white;
-		background-color: lightblue;
+		background-color: red;
 		border: none;
 	}
 
@@ -70,12 +70,12 @@ session_start();
 	<div id="box">
 
 		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Update Notice</div>
+			<div style="font-size: 20px;color: orange;">Delete Instructor Info</div>
 
-			<p><label for="inp1">Add Notice:</label>
-			<input id="text" type="text" name="notice"><br><br>
+			<p><label for="inp1">Enter the Instructor id You want to delete:</label>
+			<input id="text" type="number" name="id"><br><br>
 
-			<input id="button" type="submit" value="add"><br><br>
+			<input id="button" type="submit" value="Delete"><br><br>
 
 		</form>
 	</div>

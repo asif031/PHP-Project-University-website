@@ -1,22 +1,19 @@
 <?php
-session_start();
 
 	include("connection.php");
-	include("adfunction.php");
-
-	$user_data= check_login($con);
 
 
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 
-		$notice = $_POST['notice'];
+		$id = $_POST['id'];
+    $nPassword = $_POST['nPassword'];
 
-		if(!empty($notice))
+		if(!empty($id) && !empty($nPassword))
 		{
 
 			//save to database
-			$query = "insert into noticeboard (notice) values ('$notice')";
+			$query = "UPDATE $table SET password=$nPassword  WHERE $table_id=$id";
 
 			mysqli_query($con, $query);
 
@@ -24,7 +21,7 @@ session_start();
 			die;
 		}else
 		{
-			include "js/emptyfield.js";
+			echo "empty field!";
 		}
 	}
 ?>
@@ -33,7 +30,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Signup</title>
+	<title>deleteNotice</title>
 </head>
 <body>
 
@@ -53,7 +50,7 @@ session_start();
 		padding: 10px;
 		width: 100px;
 		color: white;
-		background-color: lightblue;
+		background-color: red;
 		border: none;
 	}
 
@@ -70,12 +67,15 @@ session_start();
 	<div id="box">
 
 		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Update Notice</div>
+			<div style="font-size: 20px;color: orange;">Change <?php echo $user; ?> password</div>
 
-			<p><label for="inp1">Add Notice:</label>
-			<input id="text" type="text" name="notice"><br><br>
+			<p><label for="inp1">Enter the <?php echo $user;?> id:</label>
+			<input id="text" type="number" name="id"><br><br>
 
-			<input id="button" type="submit" value="add"><br><br>
+      <p><label for="inp1">Enter New Password:</label>
+			<input id="text" type="text" name="nPassword"><br><br>
+
+			<input id="button" type="submit" value="Change"><br><br>
 
 		</form>
 	</div>

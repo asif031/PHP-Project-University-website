@@ -8,5 +8,5 @@ if(isset($_SESSION['user_id']))
 
 }
 
-header("Location: slogin.php");
+header("Location: students.php");
 die;

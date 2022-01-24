@@ -1,0 +1,12 @@
+.social-part .fa{
+    padding-right:20px;
+}
+ul li a{
+    margin-right: 20px;
+}
+a:active {
+  background-color: yellow;
+}
+:target {
+    background-color:  #abe8f0 ;
+}

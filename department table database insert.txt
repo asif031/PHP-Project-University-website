@@ -1,5 +1,0 @@
-insert into departments(dept_id,dept_name, capacity) values (7,"CSE",10);
-insert into departments(dept_id,dept_name, capacity) values (1,"CE",10);
-insert into departments(dept_id,dept_name, capacity) values (3,"EEE",10);
-insert into departments(dept_id,dept_name, capacity) values (5,"ME",10);
-insert into departments(dept_id,dept_name, capacity) values (10,"Sorcerer",10);
